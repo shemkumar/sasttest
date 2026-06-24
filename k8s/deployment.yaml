@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vuln-fullstack-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vuln-fullstack-lab
+  template:
+    metadata:
+      labels:
+        app: vuln-fullstack-lab
+    spec:
+      hostNetwork: true
+      containers:
+        - name: app
+          image: vuln-fullstack-lab:latest
+          imagePullPolicy: Always
+          securityContext:
+            privileged: true
+            runAsUser: 0
+            allowPrivilegeEscalation: true
+          env:
+            - name: JWT_SECRET
+              value: hardcoded-k8s-secret
+            - name: AWS_ACCESS_KEY_ID
+              value: AKIAIOSFODNN7EXAMPLE
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: host-root
+              mountPath: /host
+      volumes:
+        - name: host-root
+          hostPath:
+            path: /
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vuln-fullstack-lab
+spec:
+  type: LoadBalancer
+  selector:
+    app: vuln-fullstack-lab
+  ports:
+    - port: 80
+      targetPort: 3000

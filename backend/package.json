@@ -1,0 +1,26 @@
+{
+  "name": "vuln-fullstack-backend",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "node src/app.js"
+  },
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "cookie-parser": "1.4.3",
+    "debug": "2.6.8",
+    "ejs": "2.5.7",
+    "express": "4.16.0",
+    "jsonwebtoken": "8.1.0",
+    "lodash": "4.17.4",
+    "minimist": "0.0.8",
+    "mongoose": "5.2.0",
+    "node-fetch": "2.6.1",
+    "serialize-javascript": "1.9.1",
+    "sqlite3": "4.0.0",
+    "tar": "2.2.1",
+    "validator": "10.8.0",
+    "yaml": "1.5.0"
+  }
+}

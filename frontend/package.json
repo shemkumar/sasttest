@@ -1,0 +1,20 @@
+{
+  "name": "vuln-fullstack-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "1.0.0",
+    "axios": "0.21.0",
+    "bootstrap": "3.3.7",
+    "jquery": "3.4.0",
+    "moment": "2.19.3",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-router-dom": "5.0.0",
+    "vite": "2.0.0"
+  },
+  "devDependencies": {}
+}
